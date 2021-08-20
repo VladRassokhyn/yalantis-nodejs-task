@@ -11,7 +11,7 @@ const postUser = async (dto: User) => {
     const bufferImage = fs.readFileSync(path.join(__dirname, '../', dto.photo));
     const bitmap = bmp.decode(bufferImage);
 
-    const sharpImage = sharp(bitmap.data, {
+    const sharpImage = sharp(bitmap ? bitmap.data : bufferImage, {
       raw: {
         height: bitmap.height,
         width: bitmap.width,

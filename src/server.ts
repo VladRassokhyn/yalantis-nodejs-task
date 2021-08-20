@@ -4,7 +4,7 @@ import path from 'path';
 import { TryDbConnect } from './db';
 import { config } from './config';
 import { usersRouter } from './resources/users.router';
-import { logger } from './logger';
+import { logger } from './middlewares/logger';
 
 export const app = express();
 
